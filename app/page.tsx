@@ -6,8 +6,6 @@ import Header from "../components/Header";
 import Button from "../components/Button";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
-
-// Heroicons for Features
 import { AcademicCapIcon, CodeBracketIcon, LightBulbIcon } from "@heroicons/react/24/outline";
 
 export default function Home() {
@@ -39,7 +37,7 @@ export default function Home() {
           <ul className="mt-2 list-disc list-inside text-white/90">
             <li>Next.js App Router for scalable architecture</li>
             <li>Tailwind CSS for polished UI</li>
-            <li>React Hooks & modular components for maintainable code</li>
+            <li>React Hooks & modular components</li>
           </ul>
         </>
       ),
@@ -95,7 +93,9 @@ export default function Home() {
           className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-indigo-500 text-white font-bold transition-all duration-300"
         />
         <div className="text-center">
-          <p className="mb-2 font-semibold text-gray-700">Click the button to increase the count: {count}</p>
+          <p className="mb-2 font-semibold text-gray-700">
+            Click the button to increase the count: {count}
+          </p>
           <Button
             label="Increase Count"
             onClick={() => setCount(count + 1)}
