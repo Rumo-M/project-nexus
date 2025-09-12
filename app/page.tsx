@@ -5,7 +5,6 @@ import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import Button from "../components/Button";
 import Card from "../components/Card";
-import Footer from "../components/Footer";
 import { AcademicCapIcon, CodeBracketIcon, LightBulbIcon } from "@heroicons/react/24/outline";
 
 export default function Home() {
@@ -16,8 +15,8 @@ export default function Home() {
     {
       title: "Task Management",
       description: (
-        <div>
-          <p>Easily create, organize, and prioritize tasks to boost productivity.</p>
+        <div className="space-y-2">
+          <div>Easily create, organize, and prioritize tasks to boost productivity.</div>
           <ul className="mt-2 list-disc list-inside text-white/90">
             <li>Drag-and-drop task organization</li>
             <li>Real-time sync across devices</li>
@@ -32,8 +31,8 @@ export default function Home() {
     {
       title: "Modern Tech Stack",
       description: (
-        <div>
-          <p>Built with cutting-edge technologies for speed and maintainability.</p>
+        <div className="space-y-2">
+          <div>Built with cutting-edge technologies for speed and maintainability.</div>
           <ul className="mt-2 list-disc list-inside text-white/90">
             <li>Next.js App Router for scalable architecture</li>
             <li>Tailwind CSS for polished UI</li>
@@ -48,8 +47,8 @@ export default function Home() {
     {
       title: "Interactive Dashboard",
       description: (
-        <div>
-          <p>Real-time insights and interactive analytics to empower users.</p>
+        <div className="space-y-2">
+          <div>Real-time insights and interactive analytics to empower users.</div>
           <ul className="mt-2 list-disc list-inside text-white/90">
             <li>Dynamic charts and graphs</li>
             <li>Searchable & filterable data tables</li>
@@ -64,66 +63,51 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen flex flex-col bg-gray-100">
+    <div className="min-h-screen bg-gray-900 text-white">
       <Navbar />
       <Header />
 
-      {/* Hero Section */}
-      <section className="text-center py-20 relative overflow-hidden bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-500 text-white">
-        <h1 className="text-5xl md:text-6xl font-extrabold mb-6 animate-pulse drop-shadow-lg">
-          Welcome to Project Nexus
-        </h1>
-        <p className="text-lg md:text-2xl max-w-3xl mx-auto drop-shadow-sm">
-          Your professional capstone portfolio built with Next.js, Tailwind CSS, and creativity.
-        </p>
-      </section>
+      <main className="max-w-6xl mx-auto px-4 py-12 space-y-12">
+        {/* Greeting Section */}
+        <section className="text-center space-y-4">
+          <h1 className="text-4xl font-bold">Welcome to Project Nexus</h1>
+          <p>Your professional capstone portfolio built with Next.js, Tailwind CSS, and creativity.</p>
 
-      {/* Interactive Section */}
-      <section className="flex flex-col items-center space-y-6 py-16 px-4 md:px-0">
-        <input
-          className="p-3 border rounded-md w-64 text-gray-700"
-          type="text"
-          placeholder="Type your name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <Button
-          label="Say Hello"
-          onClick={() => alert(`Hello, ${name || "Guest"}!`)}
-          className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-indigo-500 text-white font-bold transition-all duration-300"
-        />
-        <div className="text-center">
-          <p className="mb-2 font-semibold text-gray-700">
-            Click the button to increase the count: {count}
-          </p>
-          <Button
-            label="Increase Count"
-            onClick={() => setCount(count + 1)}
-            className="bg-gradient-to-r from-green-400 to-green-600 hover:from-green-600 hover:to-green-400 text-white font-bold transition-all duration-300"
-          />
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-20 px-4 md:px-0">
-        {features.map((feature, idx) => (
-          <Card
-            key={idx}
-            title={feature.title}
-            description={feature.description}
-            icon={feature.icon}
-            className={`${feature.gradient} rounded-2xl p-6 text-white shadow-xl hover:scale-105 transition-transform duration-300`}
-          >
-            <Button
-              label={feature.buttonLabel}
-              onClick={() => alert(`${feature.title} Details`)}
-              className="mt-4 bg-white text-black font-bold hover:bg-black hover:text-white transition-colors duration-300"
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4 mt-4">
+            <input
+              type="text"
+              placeholder="Type your name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="px-4 py-2 rounded text-gray-900"
             />
-          </Card>
-        ))}
-      </section>
+            <Button onClick={() => alert(`Hello, ${name || "Guest"}!`)}>Say Hello</Button>
+          </div>
 
-      <Footer />
-    </main>
+          <div className="mt-6">
+            <p>Click the button to increase the count: {count}</p>
+            <Button onClick={() => setCount(count + 1)}>Increase Count</Button>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section className="grid md:grid-cols-3 gap-8">
+          {features.map((feature, idx) => (
+            <Card
+              key={idx}
+              title={feature.title}
+              description={feature.description}
+              icon={feature.icon}
+              gradient={feature.gradient}
+              buttonLabel={feature.buttonLabel}
+            />
+          ))}
+        </section>
+      </main>
+
+      <footer className="text-center py-6 border-t border-gray-700">
+        © 2025 Project Nexus. All rights reserved.
+      </footer>
+    </div>
   );
 }
