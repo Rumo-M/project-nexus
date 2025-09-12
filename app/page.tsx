@@ -4,7 +4,6 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import Button from "../components/Button";
-import Input from "../components/Input";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
 
@@ -20,7 +19,7 @@ export default function Home() {
       title: "Task Management",
       description: (
         <>
-          Easily create, organize, and prioritize tasks to boost productivity.
+          <p>Easily create, organize, and prioritize tasks to boost productivity.</p>
           <ul className="mt-2 list-disc list-inside text-white/90">
             <li>Drag-and-drop task organization</li>
             <li>Real-time sync across devices</li>
@@ -36,11 +35,11 @@ export default function Home() {
       title: "Modern Tech Stack",
       description: (
         <>
-          Cutting-edge technologies for speed and maintainability.
+          <p>Built with cutting-edge technologies for speed and maintainability.</p>
           <ul className="mt-2 list-disc list-inside text-white/90">
-            <li>Next.js App Router</li>
+            <li>Next.js App Router for scalable architecture</li>
             <li>Tailwind CSS for polished UI</li>
-            <li>React Hooks & modular components</li>
+            <li>React Hooks & modular components for maintainable code</li>
           </ul>
         </>
       ),
@@ -52,7 +51,7 @@ export default function Home() {
       title: "Interactive Dashboard",
       description: (
         <>
-          Real-time insights and interactive analytics.
+          <p>Real-time insights and interactive analytics to empower users.</p>
           <ul className="mt-2 list-disc list-inside text-white/90">
             <li>Dynamic charts and graphs</li>
             <li>Searchable & filterable data tables</li>
@@ -83,11 +82,12 @@ export default function Home() {
 
       {/* Interactive Section */}
       <section className="flex flex-col items-center space-y-6 py-16 px-4 md:px-0">
-        <Input
-          label="Enter Your Name"
+        <input
+          className="p-3 border rounded-md w-64 text-gray-700"
+          type="text"
+          placeholder="Type your name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="Type your name"
         />
         <Button
           label="Say Hello"
