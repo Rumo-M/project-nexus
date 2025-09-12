@@ -16,14 +16,14 @@ export default function Home() {
     {
       title: "Task Management",
       description: (
-        <>
+        <div>
           <p>Easily create, organize, and prioritize tasks to boost productivity.</p>
           <ul className="mt-2 list-disc list-inside text-white/90">
             <li>Drag-and-drop task organization</li>
             <li>Real-time sync across devices</li>
             <li>Customizable task categories & priorities</li>
           </ul>
-        </>
+        </div>
       ),
       icon: <AcademicCapIcon className="w-10 h-10 text-yellow-200 mb-3" />,
       gradient: "bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600",
@@ -32,14 +32,14 @@ export default function Home() {
     {
       title: "Modern Tech Stack",
       description: (
-        <>
+        <div>
           <p>Built with cutting-edge technologies for speed and maintainability.</p>
           <ul className="mt-2 list-disc list-inside text-white/90">
             <li>Next.js App Router for scalable architecture</li>
             <li>Tailwind CSS for polished UI</li>
             <li>React Hooks & modular components</li>
           </ul>
-        </>
+        </div>
       ),
       icon: <CodeBracketIcon className="w-10 h-10 text-cyan-200 mb-3" />,
       gradient: "bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600",
@@ -48,14 +48,14 @@ export default function Home() {
     {
       title: "Interactive Dashboard",
       description: (
-        <>
+        <div>
           <p>Real-time insights and interactive analytics to empower users.</p>
           <ul className="mt-2 list-disc list-inside text-white/90">
             <li>Dynamic charts and graphs</li>
             <li>Searchable & filterable data tables</li>
             <li>Customizable analytics reports</li>
           </ul>
-        </>
+        </div>
       ),
       icon: <LightBulbIcon className="w-10 h-10 text-pink-200 mb-3" />,
       gradient: "bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600",
