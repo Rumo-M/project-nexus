@@ -15,25 +15,70 @@ export default function Home() {
   const [name, setName] = useState("");
   const [count, setCount] = useState(0);
 
-  return (
-    <main className="min-h-screen flex flex-col bg-gray-50">
-      {/* Navbar */}
-      <Navbar />
+  const features = [
+    {
+      title: "Task Management",
+      description: (
+        <>
+          Easily create, organize, and prioritize tasks to boost productivity.
+          <ul className="mt-2 list-disc list-inside text-white/90">
+            <li>Drag-and-drop task organization</li>
+            <li>Real-time sync across devices</li>
+            <li>Customizable task categories & priorities</li>
+          </ul>
+        </>
+      ),
+      icon: <AcademicCapIcon className="w-10 h-10 text-yellow-200 mb-3" />,
+      gradient: "bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600",
+      buttonLabel: "Learn More",
+    },
+    {
+      title: "Modern Tech Stack",
+      description: (
+        <>
+          Cutting-edge technologies for speed and maintainability.
+          <ul className="mt-2 list-disc list-inside text-white/90">
+            <li>Next.js App Router</li>
+            <li>Tailwind CSS for polished UI</li>
+            <li>React Hooks & modular components</li>
+          </ul>
+        </>
+      ),
+      icon: <CodeBracketIcon className="w-10 h-10 text-cyan-200 mb-3" />,
+      gradient: "bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600",
+      buttonLabel: "Learn More",
+    },
+    {
+      title: "Interactive Dashboard",
+      description: (
+        <>
+          Real-time insights and interactive analytics.
+          <ul className="mt-2 list-disc list-inside text-white/90">
+            <li>Dynamic charts and graphs</li>
+            <li>Searchable & filterable data tables</li>
+            <li>Customizable analytics reports</li>
+          </ul>
+        </>
+      ),
+      icon: <LightBulbIcon className="w-10 h-10 text-pink-200 mb-3" />,
+      gradient: "bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600",
+      buttonLabel: "Learn More",
+    },
+  ];
 
-      {/* Header */}
+  return (
+    <main className="min-h-screen flex flex-col bg-gray-100">
+      <Navbar />
       <Header />
 
       {/* Hero Section */}
-      <section className="text-center py-20 relative overflow-hidden bg-gradient-to-r from-blue-500 via-indigo-600 to-purple-600 text-white">
-        <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg animate-pulse">
+      <section className="text-center py-20 relative overflow-hidden bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-500 text-white">
+        <h1 className="text-5xl md:text-6xl font-extrabold mb-6 animate-pulse drop-shadow-lg">
           Welcome to Project Nexus
         </h1>
         <p className="text-lg md:text-2xl max-w-3xl mx-auto drop-shadow-sm">
-          Your professional capstone portfolio built with Next.js and Tailwind CSS.
+          Your professional capstone portfolio built with Next.js, Tailwind CSS, and creativity.
         </p>
-        {/* Optional decorative shapes */}
-        <div className="absolute top-0 left-0 w-72 h-72 bg-purple-400 opacity-30 rounded-full -translate-x-1/2 -translate-y-1/2 animate-spin-slow"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-400 opacity-20 rounded-full translate-x-1/3 translate-y-1/3 animate-ping"></div>
       </section>
 
       {/* Interactive Section */}
@@ -47,83 +92,37 @@ export default function Home() {
         <Button
           label="Say Hello"
           onClick={() => alert(`Hello, ${name || "Guest"}!`)}
-          className="hover:bg-indigo-700 transition-colors duration-300"
+          className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-indigo-500 text-white font-bold transition-all duration-300"
         />
         <div className="text-center">
           <p className="mb-2 font-semibold text-gray-700">Click the button to increase the count: {count}</p>
           <Button
             label="Increase Count"
             onClick={() => setCount(count + 1)}
-            className="hover:bg-green-600 transition-colors duration-300"
+            className="bg-gradient-to-r from-green-400 to-green-600 hover:from-green-600 hover:to-green-400 text-white font-bold transition-all duration-300"
           />
         </div>
       </section>
 
       {/* Features Section */}
       <section className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-20 px-4 md:px-0">
-        {[
-          {
-            title: "Task Management",
-            description: (
-              <>
-                Easily create, organize, and prioritize tasks to boost productivity and workflow efficiency.
-                <ul className="mt-2 list-disc list-inside text-gray-600">
-                  <li>Drag-and-drop task organization for quick adjustments</li>
-                  <li>Real-time updates to keep your work synced across devices</li>
-                  <li>Customizable task categories and priorities for personal workflow</li>
-                </ul>
-              </>
-            ),
-            icon: <AcademicCapIcon className="w-8 h-8 text-blue-500 mb-3" />,
-            buttonLabel: "Learn More",
-            onClick: () => alert("Task Management Feature Details"),
-          },
-          {
-            title: "Modern Tech Stack",
-            description: (
-              <>
-                Built using cutting-edge technologies to ensure a fast, responsive, and maintainable application.
-                <ul className="mt-2 list-disc list-inside text-gray-600">
-                  <li>Next.js App Router for scalable architecture and routing</li>
-                  <li>Tailwind CSS for a modern, responsive, and polished UI</li>
-                  <li>React Hooks and modular components for maintainable code</li>
-                </ul>
-              </>
-            ),
-            icon: <CodeBracketIcon className="w-8 h-8 text-green-500 mb-3" />,
-            buttonLabel: "Learn More",
-            onClick: () => alert("Tech Stack Feature Details"),
-          },
-          {
-            title: "Interactive Dashboard",
-            description: (
-              <>
-                The dashboard provides real-time insights and interactive analytics that empower users to make data-driven decisions.
-                <ul className="mt-2 list-disc list-inside text-gray-600">
-                  <li>Dynamic charts and graphs that update instantly</li>
-                  <li>Searchable and filterable data tables for detailed exploration</li>
-                  <li>Customizable analytics reports tailored to user needs</li>
-                </ul>
-              </>
-            ),
-            icon: <LightBulbIcon className="w-8 h-8 text-yellow-500 mb-3" />,
-            buttonLabel: "Learn More",
-            onClick: () => alert("Interactive Dashboard Details"),
-          },
-        ].map((feature, idx) => (
+        {features.map((feature, idx) => (
           <Card
             key={idx}
             title={feature.title}
             description={feature.description}
             icon={feature.icon}
-            className="hover:scale-105 hover:shadow-2xl transition-transform duration-300 rounded-xl p-6 bg-white"
+            className={`${feature.gradient} rounded-2xl p-6 text-white shadow-xl hover:scale-105 transition-transform duration-300`}
           >
-            <Button label={feature.buttonLabel} onClick={feature.onClick} className="hover:bg-indigo-600 transition-colors duration-300" />
+            <Button
+              label={feature.buttonLabel}
+              onClick={() => alert(`${feature.title} Details`)}
+              className="mt-4 bg-white text-black font-bold hover:bg-black hover:text-white transition-colors duration-300"
+            />
           </Card>
         ))}
       </section>
 
-      {/* Footer */}
       <Footer />
     </main>
   );
