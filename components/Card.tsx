@@ -1,16 +1,22 @@
-// components/Card.tsx
+"use client";
+
 interface CardProps {
   title: string;
-  description: string;
-  children?: React.ReactNode;
+  description: React.ReactNode;
+  icon: React.ReactNode;
+  gradient: string;
+  buttonLabel: string;
 }
 
-export default function Card({ title, description, children }: CardProps) {
+export default function Card({ title, description, icon, gradient, buttonLabel }: CardProps) {
   return (
-    <div className="border rounded-lg shadow p-6 bg-white hover:shadow-lg transition-shadow">
+    <div className={`rounded-lg shadow p-6 ${gradient} hover:shadow-lg transition-shadow`}>
+      <div className="flex items-center mb-4">{icon}</div>
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <div className="text-gray-600 mb-4">{description}</div>
-      {children}
+      <div className="text-white/90 mb-4">{description}</div>
+      <button className="px-4 py-2 bg-white text-gray-900 rounded hover:bg-gray-200 transition">
+        {buttonLabel}
+      </button>
     </div>
   );
 }
