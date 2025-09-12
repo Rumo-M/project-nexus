@@ -17,41 +17,51 @@ export default function Home() {
       {/* Navbar */}
       <Navbar />
 
-      {/* Header */}
+      {/* Hero / Header */}
       <Header />
+      <section className="text-center py-12 bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">Welcome to Project Nexus</h1>
+        <p className="text-lg md:text-xl max-w-2xl mx-auto">
+          Your professional capstone portfolio built with Next.js and Tailwind CSS.
+        </p>
+      </section>
 
-      {/* Main Content */}
-      <div className="flex-1 p-8 max-w-5xl mx-auto space-y-10">
-        {/* Welcome Section */}
-        <section className="text-center space-y-4">
-          <h2 className="text-3xl font-bold">Welcome to Project Nexus</h2>
-          <p className="text-gray-700 text-lg">
-            Your professional capstone portfolio built with Next.js & Tailwind CSS.
-          </p>
-        </section>
-
-        {/* Interactive Section */}
-        <section className="text-center space-y-4">
-          <Input
-            label="Enter Your Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Type your name"
+      {/* Interactive Section */}
+      <section className="flex flex-col items-center space-y-6 py-12 px-4 md:px-0">
+        <Input
+          label="Enter Your Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Type your name"
+        />
+        <Button label="Say Hello" onClick={() => alert(`Hello, ${name || "Guest"}!`)} />
+        <div className="text-center">
+          <p className="mb-2 font-semibold">Click the button to increase the count: {count}</p>
+          <Button
+            label="Increase Count"
+            onClick={() => setCount(count + 1)}
           />
-          <Button label="Say Hello" onClick={() => alert(`Hello, ${name || "Guest"}!`)} />
-          <div className="mt-4">
-            <p className="mb-2">Click the button to increase the count: {count}</p>
-            <Button label="Increase Count" onClick={() => setCount(count + 1)} />
-          </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Cards Section */}
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Card title="Feature 1" description="Showcase your first amazing feature." />
-          <Card title="Feature 2" description="Highlight another project skill here." />
-          <Card title="Feature 3" description="Explain something interesting about your app." />
-        </section>
-      </div>
+      {/* Features / Cards Section */}
+      <section className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 py-12 px-4 md:px-0">
+        <Card
+          title="Feature 1"
+          description="Showcase your first amazing feature."
+          className="bg-white shadow-lg rounded-lg p-6 hover:scale-105 transform transition"
+        />
+        <Card
+          title="Feature 2"
+          description="Highlight another project skill here."
+          className="bg-white shadow-lg rounded-lg p-6 hover:scale-105 transform transition"
+        />
+        <Card
+          title="Feature 3"
+          description="Explain something interesting about your app."
+          className="bg-white shadow-lg rounded-lg p-6 hover:scale-105 transform transition"
+        />
+      </section>
 
       {/* Footer */}
       <Footer />
