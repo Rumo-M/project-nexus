@@ -5,7 +5,6 @@ import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import Button from "../components/Button";
 import Card from "../components/Card";
-import { AcademicCapIcon, CodeBracketIcon, LightBulbIcon } from "@heroicons/react/24/outline";
 
 export default function Home() {
   const [name, setName] = useState("");
@@ -24,7 +23,6 @@ export default function Home() {
           </ul>
         </div>
       ),
-      icon: <AcademicCapIcon className="w-4 h-4 text-yellow-200 mb-3" />,
       gradient: "bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600",
       buttonLabel: "Learn More",
     },
@@ -40,7 +38,6 @@ export default function Home() {
           </ul>
         </div>
       ),
-      icon: <CodeBracketIcon className="w-4 h-4 text-cyan-200 mb-3" />,
       gradient: "bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600",
       buttonLabel: "Learn More",
     },
@@ -56,7 +53,6 @@ export default function Home() {
           </ul>
         </div>
       ),
-      icon: <LightBulbIcon className="w-4 h-4 text-pink-200 mb-3" />,
       gradient: "bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600",
       buttonLabel: "Learn More",
     },
@@ -97,7 +93,6 @@ export default function Home() {
               key={idx}
               title={feature.title}
               description={feature.description}
-              icon={feature.icon}
               gradient={feature.gradient}
               buttonLabel={feature.buttonLabel}
             />
