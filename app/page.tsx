@@ -24,7 +24,7 @@ export default function Home() {
           </ul>
         </div>
       ),
-      icon: <AcademicCapIcon className="w-10 h-10 text-yellow-200 mb-3" />,
+      icon: <AcademicCapIcon className="w-4 h-4 text-yellow-200 mb-3" />,
       gradient: "bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600",
       buttonLabel: "Learn More",
     },
@@ -40,7 +40,7 @@ export default function Home() {
           </ul>
         </div>
       ),
-      icon: <CodeBracketIcon className="w-10 h-10 text-cyan-200 mb-3" />,
+      icon: <CodeBracketIcon className="w-4 h-4 text-cyan-200 mb-3" />,
       gradient: "bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600",
       buttonLabel: "Learn More",
     },
@@ -56,7 +56,7 @@ export default function Home() {
           </ul>
         </div>
       ),
-      icon: <LightBulbIcon className="w-10 h-10 text-pink-200 mb-3" />,
+      icon: <LightBulbIcon className="w-4 h-4 text-pink-200 mb-3" />,
       gradient: "bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600",
       buttonLabel: "Learn More",
     },
